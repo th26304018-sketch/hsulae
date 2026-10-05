@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+
+        /* =====================
+           OPENING
+        ===================== */
+
+        #opening {
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6e7,
+                #e4d5ff
+            );
+        }
+
+        .gift {
+            font-size: 100px;
+
+            animation: shake 1s infinite;
+        }
+
+        #opening h1 {
+            margin-top: 20px;
+
+            color: #ff4f81;
+
+            font-size: 40px;
+        }
+
+        #opening p {
+            margin-top: 10px;
+
+            color: #666;
+
+            font-size: 18px;
+        }
+
+
+        /* BUTTON */
+
+        button {
+            margin-top: 25px;
+
+            padding: 15px 30px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #ff4f81;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff2865;
+
+            transform: scale(1.05);
+        }
+
+
+        /* =====================
+           BIRTHDAY PAGE
+        ===================== */
+
+        #birthday {
+            display: none;
+
+            height: 100vh;
+
+            overflow-y: auto;
+
+            padding: 40px 20px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #ffe0ec,
+                #e4dcff,
+                #d9f5ff
+            );
+        }
+
+
+        .card {
+            max-width: 500px;
+
+            margin: auto;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
+        }
+
+
+        .cake {
+            font-size: 80px;
+        }
+
+
+        .card h1 {
+            margin-top: 10px;
+
+            color: #ff4f81;
+
+            font-size: 40px;
+        }
+
+
+        .card h2 {
+            margin-top: 10px;
+
+            color: #777;
+        }
+
+
+        /* PHOTO */
+
+        .photo {
+            width: 180px;
+            height: 180px;
+
+            margin-top: 20px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #ffd1df;
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+            margin-top: 25px;
+
+            color: #555;
+
+            line-height: 1.8;
+        }
+
+
+        /* SECRET */
+
+        #secret {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            background: #fff0f6;
+
+            border-radius: 20px;
+        }
+
+
+        #secret h2 {
+            color: #ff4f81;
+        }
+
+
+        #secret p {
+            margin-top: 15px;
+
+            line-height: 1.8;
+
+            color: #666;
+        }
+
+
+        /* ANIMATION */
+
+        @keyframes shake {
+
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================
+         OPENING
+    ====================== -->
+
+    <div id="opening">
+
+        <div class="gift">
+            🎁
+        </div>
+
+        <h1>
+            A Little Surprise 💕
+        </h1>
+
+        <p>
+            For my lovely little sister
+        </p>
+
+        <button onclick="openGift()">
+            Open Your Gift 🎀
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================
+         BIRTHDAY
+    ====================== -->
+
+    <div id="birthday">
+
+        <div class="card">
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <h1>
+                Happy Birthday!
+            </h1>
+
+            <h2>
+                My Little Sister 💕
+            </h2>
+
+
+            <!--
+            If you have a photo,
+            put sister.jpg in the same folder
+            -->
+
+            <img
+                src="sister.jpeg"
+                class="photo"
+                alt="My Sister"
+            >
+
+
+            <p class="message">
+
+                Happy Birthday to my lovely little sister! 🥳💗
+
+                <br><br>
+
+                I hope you always stay happy,
+                healthy and strong.
+
+                <br>
+
+                May all your dreams come true
+                and may your future be filled
+                with beautiful memories. ✨
+
+                <br><br>
+
+                Keep smiling and enjoy your
+                special day! 🎀
+
+            </p>
+
+
+            <button onclick="showMessage()">
+                One More Surprise 💌
+            </button>
+
+
+            <div id="secret">
+
+                <h2>
+                    💖 A Message For You 💖
+                </h2>
+
+                <p>
+
+                    No matter how old you become,
+                    you will always be my little sister. 🥰
+
+                    <br><br>
+
+                    I am always cheering for you!
+
+                    <br>
+
+                    Love you so much! 💕
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================
+         JAVASCRIPT
+    ====================== -->
+
+    <script>
+
+        function openGift() {
+
+            document.getElementById("opening").style.display = "none";
+
+            document.getElementById("birthday").style.display = "block";
+
+        }
+
+
+        function showMessage() {
+
+            document.getElementById("secret").style.display = "block";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
